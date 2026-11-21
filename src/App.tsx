@@ -1,11 +1,33 @@
 import './App.css'
 
-const App = () => {
-
-  return (
-    <>
-    </>
-  )
+interface Props {
+  rank: string;
+  suit: string;
 }
 
-export default App
+const Card = (props: Props) => {
+  const cardClasses = `cards rank-"${props.rank}" "${props.suit}"`
+
+  let symbol = "";
+
+  if (props.suit === 'diams') {
+    symbol = "♦️"
+  } else if (props.suit === 'hearts') {
+    symbol = "♥️"
+  } else if (props.suit === 'clubs') {
+    symbol = "♣️"
+  } else if (props.suit === 'spades') {
+    symbol = "♠️"
+  }
+
+  return (
+      <div className="playingCards faceImages">
+          <span className={cardClasses}>
+           <span className="rank">{props.rank.toUpperCase()}</span>
+           <span className="suit">{symbol}</span>
+         </span>
+      </div>
+  );
+};
+
+export default Card
