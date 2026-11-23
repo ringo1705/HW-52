@@ -21,7 +21,12 @@ const App = () => {
         );
     }
 
+    if (cards.length === 5) {
+
+    }
+
     return (
+
         <div>
             <button onClick={dealCards}>Раздать карты</button>
 
